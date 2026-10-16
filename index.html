@@ -18,29 +18,29 @@
         <button class="botao-login" type="button">Login</button>
     </header>
 
-      <audio id="musica" src="../audio/dudidam-mambo.mp3" loop></audio>
+    <audio id="musica" src="Teste/audio/dudidam-mambo.mp3" loop></audio>
 
-  <script>
-    const musica = document.getElementById("musica");
-    musica.volume = 0.5; // opcional: de 0 a 1
+    <script>
+        const musica = document.getElementById("musica");
+        musica.volume = 0.5; // opcional: de 0 a 1
 
-    // Tenta tocar assim que a página carrega
-    musica.play().catch(() => {
-      // Se o navegador bloqueou, toca na primeira interação do usuário
-      const iniciar = () => {
-        musica.play();
-        document.removeEventListener("click", iniciar);
-        document.removeEventListener("keydown", iniciar);
-        document.removeEventListener("touchstart", iniciar);
-        document.removeEventListener("scroll", iniciar);
-      };
-      document.addEventListener("click", iniciar);
-      document.addEventListener("keydown", iniciar);
-      document.addEventListener("touchstart", iniciar);
-      document.addEventListener("scroll", iniciar);
-    });
-  </script>
+        // Tenta tocar assim que a página carrega
+        musica.play().catch(() => {
+        // Se o navegador bloqueou, toca na primeira interação do usuário
+        const iniciar = () => {
+            musica.play();
+            document.removeEventListener("click", iniciar);
+            document.removeEventListener("keydown", iniciar);
+            document.removeEventListener("touchstart", iniciar);
+            document.removeEventListener("scroll", iniciar);
+        };
+        document.addEventListener("click", iniciar);
+        document.addEventListener("keydown", iniciar);
+        document.addEventListener("touchstart", iniciar);
+        document.addEventListener("scroll", iniciar);
+        });
+    </script>
 
-    <script src="Teste/js/principal.js"></script>
+    
 </body>
 </html>
