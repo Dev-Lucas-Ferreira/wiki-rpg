@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #111;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+/* O GIF fica centralizado e se adapta a qualquer tela */
+.palco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 56px 12px 12px;
+}
+
+.tenor-gif-embed {
+  width: 100%;
+  max-width: min(640px, 100%);
+}
+
+.tenor-gif-embed iframe {
+  max-width: 100%;
+}
+
+/* Botão de voltar */
+.voltar {
+  position: fixed;
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  left: 10px;
+  padding: 8px 14px;
+
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+}
+
+.voltar:focus-visible,
+.aviso-som:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Aviso de som */
+.aviso-som {
+  position: fixed;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 24px);
+  padding: 12px 20px;
+
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  background: linear-gradient(to bottom, #5eac56, #267326);
+  border: 1px solid #39852f;
+  border-radius: 999px;
+}
+
+.aviso-som[hidden] {
+  display: none;
+}

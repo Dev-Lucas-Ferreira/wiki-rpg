@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Música em loop</title>
+
+
+</head>
+
+  <style>
+    html, body { margin: 0; height: 100%; }
+
+    body {
+      background: url("https://c.tenor.com/nnye-E7jVPkAAAAd/tenor.gif") center / cover no-repeat fixed;
+    }
+  </style>
+  <audio id="musica" src="../audio/dudidam-mambo.mp3" loop></audio>
+
+  <script>
+    const musica = document.getElementById("musica");
+    musica.volume = 0.5; // opcional: de 0 a 1
+
+    // Tenta tocar assim que a página carrega
+    musica.play().catch(() => {
+      // Se o navegador bloqueou, toca na primeira interação do usuário
+      const iniciar = () => {
+        musica.play();
+        document.removeEventListener("click", iniciar);
+        document.removeEventListener("keydown", iniciar);
+        document.removeEventListener("touchstart", iniciar);
+        document.removeEventListener("scroll", iniciar);
+      };
+      document.addEventListener("click", iniciar);
+      document.addEventListener("keydown", iniciar);
+      document.addEventListener("touchstart", iniciar);
+      document.addEventListener("scroll", iniciar);
+    });
+  </script>
+
+</body>
+</html>
