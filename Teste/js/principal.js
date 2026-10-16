@@ -2,5 +2,5 @@
 const atalho = document.getElementById("atalho");
 
 atalho.addEventListener("click", function () {
-    window.location.href = "./pages/mapas.html";
+    window.location.href = "Teste/pages/mapas.html";
 });
